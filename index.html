@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mishra Dental Clinic | Faizullaganj, Lucknow</title>
+  <meta name="description" content="Mishra Dental Clinic - Expert dental care by Dr. Ashish Mishra & Dr. Sumit Gupta. Free checkup every 1st Sunday. Located in Faizullaganj, Lucknow."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --cream: #FAF7F2;
+      --ivory: #F5EFE6;
+      --rose: #E8A598;
+      --rose-dark: #C97B6E;
+      --teal: #1A5F5E;
+      --teal-light: #2A7F7E;
+      --teal-pale: #E8F4F4;
+      --gold: #C8A96E;
+      --charcoal: #1C1C1C;
+      --mid: #555;
+      --light: #888;
+      --white: #FFFFFF;
+      --shadow: 0 8px 40px rgba(26,95,94,0.10);
+      --shadow-sm: 0 2px 16px rgba(26,95,94,0.07);
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:999;
+      background: rgba(250,247,242,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200,169,110,0.2);
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 4px 24px rgba(26,95,94,0.12); }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-icon {
+      width: 42px; height: 42px;
+      background: var(--teal);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .nav-logo-text { line-height: 1.1; }
+    .nav-logo-text span:first-child {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 16px; font-weight: 700;
+      color: var(--teal);
+    }
+    .nav-logo-text span:last-child {
+      font-size: 11px; color: var(--light);
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--mid);
+      font-size: 14px; font-weight: 500;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+      background: var(--teal); transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: var(--teal); color: var(--white) !important;
+      padding: 10px 22px; border-radius: 30px;
+      font-weight: 600 !important; font-size: 13px !important;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--teal-light) !important; transform: translateY(-1px); }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--charcoal); border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none; position: fixed; top:72px; left:0; right:0; bottom:0;
+      background: var(--cream); z-index: 998;
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px; color: var(--charcoal);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--teal); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 100px 5% 60px;
+      gap: 60px;
+      position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(232,165,152,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    #hero::after {
+      content: '';
+      position: absolute; bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(26,95,94,0.10) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--teal-pale); color: var(--teal);
+      padding: 8px 16px; border-radius: 30px;
+      font-size: 13px; font-weight: 600;
+      margin-bottom: 20px;
+      border: 1px solid rgba(26,95,94,0.15);
+    }
+    .hero-badge span { width: 8px; height: 8px; background: var(--teal); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{ opacity:1; transform:scale(1); } 50%{ opacity:0.5; transform:scale(1.3); } }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.1;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+    }
+    .hero-title em { color: var(--teal); font-style: italic; }
+    .hero-subtitle {
+      font-size: 17px; color: var(--mid); line-height: 1.7;
+      margin-bottom: 32px; max-width: 480px;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
+    .btn-primary {
+      background: var(--teal); color: var(--white);
+      padding: 16px 32px; border-radius: 50px;
+      font-size: 15px; font-weight: 600;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+      box-shadow: 0 8px 24px rgba(26,95,94,0.25);
+    }
+    .btn-primary:hover { background: var(--teal-light); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(26,95,94,0.3); }
+    .btn-secondary {
+      background: transparent; color: var(--teal);
+      padding: 16px 32px; border-radius: 50px;
+      font-size: 15px; font-weight: 600;
+      text-decoration: none; border: 2px solid var(--teal);
+      cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-secondary:hover { background: var(--teal); color: var(--white); transform: translateY(-2px); }
+    .hero-stats { display: flex; gap: 36px; }
+    .stat { text-align: center; }
+    .stat strong { display: block; font-family: 'Playfair Display', serif; font-size: 32px; color: var(--teal); }
+    .stat span { font-size: 12px; color: var(--light); text-transform: uppercase; letter-spacing: 0.5px; }
+    .hero-visual {
+      position: relative; display: flex; align-items: center; justify-content: center;
+    }
+    .hero-card {
+      background: var(--white); border-radius: 32px;
+      padding: 40px; width: 100%; max-width: 440px;
+      box-shadow: var(--shadow);
+      position: relative; z-index: 1;
+      animation: floatCard 6s ease-in-out infinite;
+    }
+    @keyframes floatCard { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-12px); } }
+    .hero-card-header {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
+      padding-bottom: 24px; border-bottom: 1px solid var(--ivory);
+    }
+    .clinic-avatar {
+      width: 64px; height: 64px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+    }
+    .clinic-info strong { display: block; font-size: 18px; font-weight: 700; color: var(--charcoal); }
+    .clinic-info span { font-size: 13px; color: var(--light); }
+    .free-offer {
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      border-radius: 20px; padding: 20px;
+      color: var(--white); margin-bottom: 20px;
+    }
+    .free-offer p:first-child { font-size: 12px; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .free-offer strong { font-family: 'Playfair Display', serif; font-size: 20px; display: block; margin-bottom: 6px; }
+    .free-offer span { font-size: 13px; opacity: 0.85; }
+    .hero-card-feature { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--ivory); }
+    .hero-card-feature:last-child { border-bottom: none; }
+    .feat-icon { font-size: 20px; }
+    .feat-text { font-size: 14px; color: var(--mid); }
+    .floating-badge {
+      position: absolute; background: var(--white); border-radius: 16px;
+      padding: 12px 16px; box-shadow: var(--shadow);
+      display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;
+    }
+    .badge-top { top: -16px; right: -20px; color: var(--teal); }
+    .badge-bottom { bottom: -16px; left: -20px; color: var(--rose-dark); }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 100px 5%; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--teal); font-size: 12px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    .section-label::before { content: ''; width: 24px; height: 2px; background: var(--teal); }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-sub { font-size: 17px; color: var(--mid); line-height: 1.7; max-width: 560px; }
+
+    /* ── OFFER BANNER ── */
+    #offer {
+      padding: 0 5%; margin: 0;
+    }
+    .offer-banner {
+      background: linear-gradient(135deg, var(--teal) 0%, #0D4E4D 100%);
+      border-radius: 32px; padding: 48px 56px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 32px; flex-wrap: wrap;
+      position: relative; overflow: hidden;
+    }
+    .offer-banner::before {
+      content: ''; position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+    .offer-content { color: var(--white); flex: 1; min-width: 280px; }
+    .offer-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15); color: var(--white);
+      padding: 6px 14px; border-radius: 30px;
+      font-size: 12px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .offer-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3vw, 36px); margin-bottom: 8px;
+    }
+    .offer-content p { opacity: 0.85; font-size: 15px; line-height: 1.6; }
+    .offer-highlight {
+      text-align: center; color: var(--white);
+      background: rgba(255,255,255,0.12); border-radius: 20px;
+      padding: 24px 36px; flex-shrink: 0;
+    }
+    .offer-highlight strong { display: block; font-size: 56px; font-family: 'Playfair Display', serif; line-height: 1; }
+    .offer-highlight span { font-size: 14px; opacity: 0.8; }
+    .offer-actions { display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap; }
+    .btn-white {
+      background: var(--white); color: var(--teal);
+      padding: 14px 28px; border-radius: 50px;
+      font-size: 14px; font-weight: 700;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .btn-outline-white {
+      background: transparent; color: var(--white);
+      padding: 14px 28px; border-radius: 50px;
+      font-size: 14px; font-weight: 700;
+      text-decoration: none; border: 2px solid rgba(255,255,255,0.4);
+      cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-outline-white:hover { border-color: var(--white); transform: translateY(-2px); }
+
+    /* ── SERVICES ── */
+    #services { background: var(--white); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px; margin-top: 56px;
+    }
+    .service-card {
+      background: var(--cream); border-radius: 24px;
+      padding: 32px; border: 1px solid rgba(200,169,110,0.15);
+      transition: all 0.3s; cursor: default;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--teal), var(--rose));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); background: var(--white); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 56px; height: 56px; border-radius: 16px;
+      background: var(--teal-pale);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; margin-bottom: 20px;
+    }
+    .service-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--charcoal); }
+    .service-card p { font-size: 14px; color: var(--mid); line-height: 1.6; }
+
+    /* ── DOCTORS ── */
+    #doctors { background: var(--cream); }
+    .doctors-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px; margin-top: 56px;
+    }
+    .doctor-card {
+      background: var(--white); border-radius: 28px;
+      overflow: hidden; box-shadow: var(--shadow-sm);
+      transition: all 0.3s;
+    }
+    .doctor-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .doctor-header {
+      background: linear-gradient(135deg, var(--teal) 0%, #0D4E4D 100%);
+      padding: 40px 32px 32px;
+      display: flex; align-items: flex-end; gap: 20px;
+      position: relative;
+    }
+    .doctor-avatar {
+      width: 80px; height: 80px; border-radius: 20px;
+      background: rgba(255,255,255,0.2);
+      border: 3px solid rgba(255,255,255,0.5);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 36px; flex-shrink: 0;
+    }
+    .doctor-header-info { color: var(--white); }
+    .doctor-header-info h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 4px; }
+    .doctor-header-info span {
+      font-size: 12px; opacity: 0.8;
+      background: rgba(255,255,255,0.15); padding: 4px 10px; border-radius: 20px;
+    }
+    .doctor-body { padding: 28px 32px; }
+    .doctor-meta { display: flex; gap: 20px; margin-bottom: 20px; }
+    .meta-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--mid); }
+    .meta-item strong { color: var(--teal); font-weight: 700; }
+    .doctor-specialties { display: flex; flex-wrap: wrap; gap: 8px; }
+    .specialty-tag {
+      background: var(--teal-pale); color: var(--teal);
+      padding: 5px 12px; border-radius: 20px;
+      font-size: 12px; font-weight: 600;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--white); }
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px; margin-top: 56px;
+    }
+    .testimonial-card {
+      background: var(--cream); border-radius: 24px;
+      padding: 32px; border: 1px solid rgba(200,169,110,0.12);
+      transition: all 0.3s;
+    }
+    .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+    .stars { color: var(--gold); font-size: 18px; margin-bottom: 16px; letter-spacing: 2px; }
+    .testimonial-card blockquote {
+      font-size: 15px; color: var(--mid); line-height: 1.7;
+      margin-bottom: 24px; font-style: italic;
+    }
+    .testimonial-card blockquote::before { content: '"'; font-size: 40px; color: var(--teal); line-height: 0; vertical-align: -0.4em; margin-right: 4px; }
+    .reviewer { display: flex; align-items: center; gap: 12px; }
+    .reviewer-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--rose));
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white); font-weight: 700; font-size: 16px; flex-shrink: 0;
+    }
+    .reviewer-info strong { display: block; font-size: 14px; font-weight: 700; }
+    .reviewer-info span { font-size: 12px; color: var(--light); }
+
+    /* ── GALLERY ── */
+    #gallery { background: var(--cream); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 200px);
+      gap: 16px; margin-top: 56px;
+    }
+    .gallery-item {
+      border-radius: 20px; overflow: hidden;
+      position: relative; cursor: pointer;
+    }
+    .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
+    .gallery-bg {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px;
+      transition: transform 0.5s;
+    }
+    .gallery-item:hover .gallery-bg { transform: scale(1.05); }
+    .g1 { background: linear-gradient(135deg, #E8F4F4, #C8E8E8); }
+    .g2 { background: linear-gradient(135deg, #F5EFE6, #EAD9C8); }
+    .g3 { background: linear-gradient(135deg, #FDE8E4, #F5CCC5); }
+    .g4 { background: linear-gradient(135deg, #E8F4F4, #D4EDEC); }
+    .g5 { background: linear-gradient(135deg, #F5EFE6, #F0E0CC); }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,95,94,0.7), transparent);
+      opacity: 0; transition: opacity 0.3s;
+      display: flex; align-items: flex-end; padding: 20px;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay span { color: var(--white); font-size: 14px; font-weight: 600; }
+
+    /* ── BOOKING / CONTACT ── */
+    #booking { background: var(--white); }
+    .booking-container {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: start; margin-top: 56px;
+    }
+    .booking-form {
+      background: var(--cream); border-radius: 32px; padding: 40px;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--mid); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      background: var(--white); border: 2px solid rgba(200,169,110,0.2);
+      border-radius: 14px; padding: 14px 18px;
+      font-family: 'DM Sans', sans-serif; font-size: 15px; color: var(--charcoal);
+      outline: none; transition: border-color 0.2s;
+      appearance: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--teal);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .whatsapp-btn {
+      width: 100%;
+      background: #25D366; color: var(--white);
+      padding: 18px; border-radius: 50px;
+      font-size: 16px; font-weight: 700;
+      border: none; cursor: pointer;
+      transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.3);
+    }
+    .whatsapp-btn:hover { background: #20BA5A; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(37,211,102,0.4); }
+    .contact-info { padding: 8px 0; }
+    .contact-info h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 24px; }
+    .info-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 20px 0; border-bottom: 1px solid rgba(200,169,110,0.15);
+    }
+    .info-item:last-of-type { border-bottom: none; }
+    .info-icon {
+      width: 48px; height: 48px; border-radius: 14px;
+      background: var(--teal-pale);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+    }
+    .info-text strong { display: block; font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .info-text span { font-size: 14px; color: var(--mid); line-height: 1.5; }
+    .map-embed {
+      border-radius: 24px; overflow: hidden;
+      height: 220px; margin-top: 24px;
+      background: linear-gradient(135deg, var(--teal-pale), var(--ivory));
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 12px;
+      border: 2px solid rgba(200,169,110,0.2);
+      cursor: pointer; transition: all 0.3s;
+    }
+    .map-embed:hover { border-color: var(--teal); }
+    .map-embed span:first-child { font-size: 40px; }
+    .map-embed span:last-child { font-size: 14px; color: var(--teal); font-weight: 600; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal); color: rgba(255,255,255,0.7);
+      padding: 60px 5% 32px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px; margin-bottom: 48px;
+    }
+    .footer-brand .nav-logo { margin-bottom: 16px; }
+    .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 280px; }
+    .footer-col h4 { color: var(--white); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-bottom p { font-size: 13px; }
+    .whatsapp-float {
+      position: fixed; bottom: 28px; right: 28px;
+      background: #25D366; color: var(--white);
+      width: 60px; height: 60px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+      text-decoration: none; z-index: 997;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: floatWA 3s ease-in-out infinite;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    @keyframes floatWA { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-6px); } }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .reveal { opacity: 0; transform: translateY(32px); transition: all 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      #hero { grid-template-columns: 1fr; padding-top: 100px; }
+      .hero-visual { display: none; }
+      .booking-container { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gallery-item:first-child { grid-column: span 2; grid-row: span 1; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 72px 5%; }
+      .offer-banner { padding: 32px 24px; }
+      .doctors-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:first-child { grid-column: span 1; }
+      .hero-stats { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-icon">🦷</div>
+    <div class="nav-logo-text">
+      <span>Mishra Dental</span>
+      <span>Clinic · Lucknow</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#offer">Free Checkup</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#doctors">Doctors</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#booking" class="nav-cta">Book Appointment</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#offer" onclick="closeMobile()">Free Checkup</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#doctors" onclick="closeMobile()">Doctors</a>
+  <a href="#testimonials" onclick="closeMobile()">Reviews</a>
+  <a href="#gallery" onclick="closeMobile()">Gallery</a>
+  <a href="#booking" onclick="closeMobile()">Book Appointment</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-badge"><span></span> Trusted by 5,000+ Patients in Lucknow</div>
+    <h1 class="hero-title">Your Smile,<br>Our <em>Passion</em>.</h1>
+    <p class="hero-subtitle">Expert dental care by Dr. Ashish Mishra &amp; Dr. Sumit Gupta. From routine checkups to advanced implants — we've got your smile covered.</p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-primary">📅 Book Appointment</a>
+      <a href="#services" class="btn-secondary">View Services →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>9+</strong><span>Years Exp.</span></div>
+      <div class="stat"><strong>5K+</strong><span>Patients</span></div>
+      <div class="stat"><strong>20%</strong><span>Discount</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="floating-badge badge-top">✅ ISO Certified Clinic</div>
+      <div class="hero-card-header">
+        <div class="clinic-avatar">🦷</div>
+        <div class="clinic-info">
+          <strong>Mishra Dental Clinic</strong>
+          <span>Faizullaganj, Lucknow</span>
+        </div>
+      </div>
+      <div class="free-offer">
+        <p>Monthly Special Offer</p>
+        <strong>FREE Dental Checkup</strong>
+        <span>Every 1st Sunday + 20% off on all treatments</span>
+      </div>
+      <div class="hero-card-feature"><span class="feat-icon">🔬</span><span class="feat-text">Advanced Dental X-Ray</span></div>
+      <div class="hero-card-feature"><span class="feat-icon">😁</span><span class="feat-text">Smile Design & Cosmetics</span></div>
+      <div class="hero-card-feature"><span class="feat-icon">🦷</span><span class="feat-text">Dental Implants</span></div>
+      <div class="floating-badge badge-bottom">⭐ 4.9 Rating · 500+ Reviews</div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE OFFER BANNER -->
+<section id="offer">
+  <div class="offer-banner reveal">
+    <div class="offer-content">
+      <div class="offer-tag">🎉 Monthly Offer — Every 1st Sunday</div>
+      <h2>Free Dental Checkup + 20% Discount</h2>
+      <p>Har mahine ke pehle Sunday ko FREE dental checkup milegi. OPD parchi ke saath clinic aane par poore daant ke ilaaj pe 20% ki chhoot milegi!</p>
+      <div class="offer-actions">
+        <a href="#booking" class="btn-white">📅 Book Now</a>
+        <a href="https://wa.me/918009128298?text=Hello%2C%20I%20want%20to%20book%20an%20appointment%20for%20the%20Free%20Sunday%20Checkup" target="_blank" class="btn-outline-white">💬 WhatsApp Us</a>
+      </div>
+    </div>
+    <div class="offer-highlight">
+      <strong>20%</strong>
+      <span>Discount on all<br>Treatments</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-label">What We Offer</div>
+  <h2 class="section-title">Complete Dental Care<br>Under One Roof</h2>
+  <p class="section-sub">From basic checkups to advanced procedures — all treatments available with modern equipment and experienced doctors.</p>
+  <div class="services-grid" id="servicesGrid"></div>
+</section>
+
+<!-- DOCTORS -->
+<section id="doctors">
+  <div class="section-label">Meet The Team</div>
+  <h2 class="section-title">Expert Doctors,<br>Gentle Hands</h2>
+  <p class="section-sub">Our experienced doctors bring years of expertise to provide the best dental care for you and your family.</p>
+  <div class="doctors-grid">
+    <div class="doctor-card reveal">
+      <div class="doctor-header">
+        <div class="doctor-avatar">👨‍⚕️</div>
+        <div class="doctor-header-info">
+          <h3>Dr. Ashish Mishra</h3>
+          <span>Lead Dental Surgeon</span>
+        </div>
+      </div>
+      <div class="doctor-body">
+        <div class="doctor-meta">
+          <div class="meta-item"><strong>10+</strong> Yrs Exp</div>
+          <div class="meta-item"><strong>3000+</strong> Patients</div>
+        </div>
+        <div class="doctor-specialties">
+          <span class="specialty-tag">RCT Expert</span>
+          <span class="specialty-tag">Implants</span>
+          <span class="specialty-tag">Smile Design</span>
+          <span class="specialty-tag">Oral Surgery</span>
+        </div>
+      </div>
+    </div>
+    <div class="doctor-card reveal">
+      <div class="doctor-header">
+        <div class="doctor-avatar">👨‍⚕️</div>
+        <div class="doctor-header-info">
+          <h3>Dr. Sumit Gupta</h3>
+          <span>Dental Specialist</span>
+        </div>
+      </div>
+      <div class="doctor-body">
+        <div class="doctor-meta">
+          <div class="meta-item"><strong>8+</strong> Yrs Exp</div>
+          <div class="meta-item"><strong>2500+</strong> Patients</div>
+        </div>
+        <div class="doctor-specialties">
+          <span class="specialty-tag">Orthodontics</span>
+          <span class="specialty-tag">Scaling</span>
+          <span class="specialty-tag">Pediatric</span>
+          <span class="specialty-tag">Restorations</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-label">Patient Reviews</div>
+  <h2 class="section-title">What Our Patients Say</h2>
+  <p class="section-sub">Real experiences from real patients. Join thousands of happy smiles in Lucknow.</p>
+  <div class="testimonials-grid" id="testimonialsGrid"></div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-label">Our Clinic</div>
+  <h2 class="section-title">Modern Facility,<br>Comfortable Environment</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item"><div class="gallery-bg g1">🏥</div><div class="gallery-overlay"><span>Reception Area</span></div></div>
+    <div class="gallery-item"><div class="gallery-bg g2">🦷</div><div class="gallery-overlay"><span>Treatment Room</span></div></div>
+    <div class="gallery-item"><div class="gallery-bg g3">🔬</div><div class="gallery-overlay"><span>X-Ray Equipment</span></div></div>
+    <div class="gallery-item"><div class="gallery-bg g4">😁</div><div class="gallery-overlay"><span>Smile Transformations</span></div></div>
+    <div class="gallery-item"><div class="gallery-bg g5">🩺</div><div class="gallery-overlay"><span>Consultation Room</span></div></div>
+  </div>
+</section>
+
+<!-- BOOKING + CONTACT -->
+<section id="booking">
+  <div class="section-label">Book An Appointment</div>
+  <h2 class="section-title">Ready For A<br>Healthier Smile?</h2>
+  <div class="booking-container">
+    <div class="booking-form reveal">
+      <h3 style="font-family:'Playfair Display',serif;font-size:22px;margin-bottom:24px;">Send Booking via WhatsApp</h3>
+      <div class="form-group">
+        <label>Your Full Name</label>
+        <input type="text" id="patName" placeholder="Enter your name"/>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Mobile Number</label>
+          <input type="tel" id="patPhone" placeholder="10-digit number"/>
+        </div>
+        <div class="form-group">
+          <label>Age</label>
+          <input type="number" id="patAge" placeholder="Your age"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Preferred Date</label>
+        <input type="date" id="patDate"/>
+      </div>
+      <div class="form-group">
+        <label>Treatment Needed</label>
+        <select id="patService">
+          <option value="">Select a service...</option>
+          <option>General Checkup</option>
+          <option>RCT (Root Canal Treatment)</option>
+          <option>Permanent Restoration</option>
+          <option>Dental X-Ray</option>
+          <option>Tooth Extraction</option>
+          <option>Dentures (RPD / Full Set)</option>
+          <option>Dental Implant</option>
+          <option>Teeth Scaling & Cleaning</option>
+          <option>Teeth Alignment / Braces</option>
+          <option>Smile Design</option>
+          <option>Pediatric Dental Care</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Additional Message (Optional)</label>
+        <textarea id="patMsg" placeholder="Describe your problem or any special requirement..."></textarea>
+      </div>
+      <button class="whatsapp-btn" onclick="sendWhatsApp()">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Send Booking on WhatsApp
+      </button>
+    </div>
+    <div class="contact-info reveal">
+      <h3>Visit Us Today</h3>
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <div class="info-text">
+          <strong>Address</strong>
+          <span>Rajput Complex, Near Lucknow Lawn,<br>Faizullaganj, Lucknow – 226020</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📞</div>
+        <div class="info-text">
+          <strong>Phone / WhatsApp</strong>
+          <span><a href="tel:+918009128298" style="color:var(--teal);text-decoration:none;font-weight:600;">+91 8009128298</a></span>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🕐</div>
+        <div class="info-text">
+          <strong>Clinic Hours</strong>
+          <span>Mon–Sat: 10:00 AM – 8:00 PM<br>Sunday: 1st Sunday FREE Checkup</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🎁</div>
+        <div class="info-text">
+          <strong>Monthly Free Offer</strong>
+          <span>Every 1st Sunday – Free Checkup + 20% off all treatments with OPD slip</span>
+        </div>
+      </div>
+      <div class="map-embed" onclick="window.open('https://maps.google.com/?q=Faizullaganj+Lucknow+226020','_blank')">
+        <span>🗺️</span>
+        <span>Open in Google Maps →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <div class="nav-logo-icon">🦷</div>
+        <div class="nav-logo-text">
+          <span style="color:#fff;">Mishra Dental Clinic</span>
+          <span>Faizullaganj, Lucknow</span>
+        </div>
+      </div>
+      <p>Providing quality dental care to families in Lucknow since years. Dr. Ashish Mishra &amp; Dr. Sumit Gupta – your trusted dental partners.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">RCT Treatment</a></li>
+        <li><a href="#services">Dental Implants</a></li>
+        <li><a href="#services">Smile Design</a></li>
+        <li><a href="#services">Orthodontics</a></li>
+        <li><a href="#services">Teeth Scaling</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#offer">Free Checkup</a></li>
+        <li><a href="#doctors">Our Doctors</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#booking">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+918009128298">📞 8009128298</a></li>
+        <li><a href="https://wa.me/918009128298" target="_blank">💬 WhatsApp</a></li>
+        <li><a href="#booking">📍 Faizullaganj, Lucknow</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Mishra Dental Clinic. All rights reserved.</p>
+    <p>Designed with ❤️ for smiles in Lucknow</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/918009128298?text=Hello%2C%20I%20want%20to%20book%20an%20appointment%20at%20Mishra%20Dental%20Clinic" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // Services Data
+  const services = [
+    { icon:'🦷', title:'RCT (Root Canal)', desc:'Painless root canal treatment to save infected teeth and relieve severe toothache.' },
+    { icon:'🔧', title:'Permanent Restoration', desc:'High-quality fillings and restorations to repair damaged or decayed teeth effectively.' },
+    { icon:'🔬', title:'Dental X-Ray', desc:'Advanced digital X-ray facility for precise diagnosis of dental problems.' },
+    { icon:'🦷', title:'Tooth Extraction', desc:'Safe and painless extraction of damaged teeth with minimal discomfort.' },
+    { icon:'😁', title:'Dentures (RPD / Battisi)', desc:'Custom-fitted removable partial and full dentures for natural-looking smiles.' },
+    { icon:'✨', title:'Smile Design', desc:'Complete cosmetic smile transformation tailored to enhance your facial features.' },
+    { icon:'🧹', title:'Scaling & Cleaning', desc:'Professional teeth cleaning to remove tartar, plaque and prevent gum disease.' },
+    { icon:'📐', title:'Teeth Alignment', desc:'Correction of crooked teeth using braces and modern alignment techniques.' },
+    { icon:'👶', title:'Pediatric Dentistry', desc:'Gentle and kid-friendly dental care to ensure healthy teeth from childhood.' },
+    { icon:'🔩', title:'Dental Implants', desc:'Permanent titanium implants for natural-looking tooth replacement that lasts a lifetime.' },
+    { icon:'🩺', title:'Alignment Issues', desc:'Comprehensive orthodontic consultation and treatment for all bite and jaw issues.' },
+    { icon:'🦷', title:'General Checkup', desc:'Thorough dental examination to detect and prevent problems before they worsen.' },
+  ];
+
+  const servicesGrid = document.getElementById('servicesGrid');
+  services.forEach(s => {
+    servicesGrid.innerHTML += `
+      <div class="service-card reveal">
+        <div class="service-icon">${s.icon}</div>
+        <h3>${s.title}</h3>
+        <p>${s.desc}</p>
+      </div>`;
+  });
+
+  // Testimonials
+  const testimonials = [
+    { name:'Ravi Sharma', loc:'Faizullaganj', stars:'★★★★★', text:'Dr. Ashish ne mera RCT bilkul dard ke bina kiya. Bahut professional aur friendly staff. Definitely recommend!' },
+    { name:'Sunita Devi', loc:'Lucknow', stars:'★★★★★', text:'Free Sunday checkup mein gayi thi, 20% discount ke saath implant karaya. Bahut achha result mila. Thank you!' },
+    { name:'Mohit Verma', loc:'Alambagh', stars:'★★★★★', text:'My kids are no longer scared of dentist visits! Dr. Sumit is amazing with children. Best pediatric care in Lucknow.' },
+    { name:'Priya Singh', loc:'Gomti Nagar', stars:'★★★★★', text:'Scaling and smile design dono karaya, result ekdum perfect hai. Clinic saaf suthra hai aur doctors bahut experienced hain.' },
+    { name:'Arun Kumar', loc:'Faizullaganj', stars:'★★★★★', text:'Puri battisi lagwai, perfectly fitted. Price bhi reasonable thi. Aas paas ka sabse achha dental clinic!' },
+    { name:'Neha Mishra', loc:'Lucknow', stars:'★★★★★', text:'WhatsApp pe appointment book karna bahut convenient tha. Doctor on time mile aur treatment excellent raha.' },
+  ];
+
+  const tGrid = document.getElementById('testimonialsGrid');
+  testimonials.forEach(t => {
+    tGrid.innerHTML += `
+      <div class="testimonial-card reveal">
+        <div class="stars">${t.stars}</div>
+        <blockquote>${t.text}</blockquote>
+        <div class="reviewer">
+          <div class="reviewer-avatar">${t.name[0]}</div>
+          <div class="reviewer-info">
+            <strong>${t.name}</strong>
+            <span>${t.loc}</span>
+          </div>
+        </div>
+      </div>`;
+  });
+
+  // WhatsApp booking
+  function sendWhatsApp() {
+    const name = document.getElementById('patName').value.trim();
+    const phone = document.getElementById('patPhone').value.trim();
+    const age = document.getElementById('patAge').value.trim();
+    const date = document.getElementById('patDate').value;
+    const service = document.getElementById('patService').value;
+    const msg = document.getElementById('patMsg').value.trim();
+
+    if (!name || !phone || !service) {
+      alert('Please fill in your Name, Phone and select a Service!');
+      return;
+    }
+
+    const dateStr = date ? new Date(date).toDateString() : 'Flexible';
+    const text = `🦷 *Appointment Request – Mishra Dental Clinic*\n\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n🎂 *Age:* ${age || 'Not specified'}\n📅 *Preferred Date:* ${dateStr}\n🩺 *Treatment:* ${service}\n💬 *Message:* ${msg || 'No additional message'}\n\n_Sent via website_`;
+
+    window.open(`https://wa.me/918009128298?text=${encodeURIComponent(text)}`, '_blank');
+  }
+
+  // Nav scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Hamburger
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+  function closeMobile() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  setTimeout(() => { document.querySelectorAll('.reveal').forEach(el => observer.observe(el)); }, 500);
+</script>
+</body>
+</html>
